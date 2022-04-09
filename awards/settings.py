@@ -1,7 +1,17 @@
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 from pathlib import Path
 
+import bootstrap3
+
+cloudinary.config( 
+  cloud_name = "kiplaa001", 
+  api_key = "371343562969626", 
+  api_secret = "qb6sgd0fHavve-T3dxBIa8H34W8" 
+)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -28,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'user',
-    'cloudianry',
+    'cloudinary',
+    'bootstrap3',
+
 
 ]
 
