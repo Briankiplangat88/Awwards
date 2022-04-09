@@ -48,3 +48,29 @@
                             </a>
                             {% endif %}
                         </div>
+                        <div class="card-body pr-2 pl-2 pr-2 mr-2" style="align-items: center;">
+                            <h5 class="card-title ml-4">{{ project_item.project_title }}</h5>
+                            <div class="row ml-2">
+                                <div class="col-lg-6 dark-text">
+                                    <small class="text-muted ml-2"><img
+                                            src="{{ project_item.Author.profile.photo.url }}" alt=""
+                                            class="rounded-circle img-fluid mr-1" style="width: 30px;">
+                                        posted By: {{project_item.author|upper}} </small>
+                                    <small> <span class="mr-1"> From {{project_item.country.name}}</span>
+                                    </small> </div>
+                                <div class="col-lg-6 dark-text d-flex justify-content-end"> <small>
+                                        {{project_item.pub_date|date:"d /m/Y"}} </small></div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
