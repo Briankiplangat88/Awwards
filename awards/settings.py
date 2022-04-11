@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'bootstrap3',
     'rest_framework',
+    'star_rating',
 
 
 ]
@@ -84,7 +85,11 @@ WSGI_APPLICATION = 'awards.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': config('DB_NAME'),
+           'USER': config('DB_USER'),
+           'PASSWORD': config('DB_PASSWORD'),
+           'HOST': config('DB_HOST'),
+           'PORT': ''
     }
 }
 
@@ -129,3 +134,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Configure Django App for Heroku.
+django_heroku.settings(locals())
