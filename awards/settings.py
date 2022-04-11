@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'user',
     'cloudinary',
     'bootstrap3',
+    'rest_framework',
 
 
 ]
